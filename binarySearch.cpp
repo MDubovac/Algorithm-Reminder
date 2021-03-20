@@ -2,22 +2,15 @@
 
 using namespace std;
 
-int binarySearch(int arr[], int l, int x, int r)
-{
-    if(r >= l)
-    {
+int binarySearch(int arr[], int l, int x, int r){
+    if(r >= l) {
         int mid = r + (l - 1) / 2;
 
-        if(arr[mid] == x)
-        {
+        if(arr[mid] == x){
             return mid;
-        } 
-        else if (arr[mid] > x)
-        {
+        } else if (arr[mid] > x) {
             return binarySearch(arr, l, mid - 1, x);
-        }
-        else 
-        {
+        } else {
             return binarySearch(arr, l, mid + 1, x);
         }
     }
@@ -36,6 +29,6 @@ int main()
     } else {
         cout << "Element exists in array, at index " << result; 
     }
-    
+
     return 0; 
 }
